@@ -10,7 +10,7 @@ const GetStarted = () => {
         </p>
         <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <button className="bg-white text-[#0078D4] px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
-            Sign up for early access
+            Join the Waitlist
           </button>
         </div>
       </div>
