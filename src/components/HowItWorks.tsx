@@ -39,9 +39,9 @@ const HowItWorks = () => {
             <div 
               key={step.number}
               className="relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="bg-white p-6 rounded-xl shadow-sm relative z-10">
+              <div className="bg-white p-6 rounded-xl shadow-sm relative z-10 hover:shadow-md transition-shadow duration-300">
                 <span className="text-4xl font-bold text-primary/20">{step.number}</span>
                 <h3 className="text-xl font-semibold mt-2 mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
