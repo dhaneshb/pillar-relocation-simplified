@@ -24,7 +24,7 @@ const Benefits = () => {
               {benefits.map((benefit, index) => (
                 <div 
                   key={benefit}
-                  className="flex items-start space-x-2 animate-fade-in"
+                  className="flex items-start space-x-2 animate-fade-in transform hover:scale-105 transition-transform duration-300"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -38,7 +38,7 @@ const Benefits = () => {
             <img 
               src="/temporary-housing.png" 
               alt="Temporary Housing" 
-              className="relative rounded-3xl shadow-lg"
+              className="relative rounded-3xl shadow-lg transform hover:scale-105 transition-transform duration-300"
             />
           </div>
         </div>

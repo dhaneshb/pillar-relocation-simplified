@@ -41,7 +41,7 @@ const HowItWorks = () => {
               className="relative animate-fade-in h-full"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="bg-white p-6 rounded-xl shadow-sm relative z-10 hover:shadow-md transition-shadow duration-300 h-[200px] flex flex-col">
+              <div className="bg-white p-6 rounded-xl shadow-sm relative z-10 hover:shadow-md transition-all duration-300 transform hover:scale-105 h-[200px] flex flex-col">
                 <span className="text-4xl font-bold text-primary/20">{step.number}</span>
                 <h3 className="text-xl font-semibold mt-2 mb-2">{step.title}</h3>
                 <p className="text-gray-600 flex-grow">{step.description}</p>

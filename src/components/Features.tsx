@@ -40,7 +40,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={feature.title}
-              className="p-6 bg-background rounded-xl hover:shadow-lg transition-shadow animate-fade-in"
+              className="p-6 bg-background rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <feature.icon className="w-12 h-12 text-primary mb-4" />
