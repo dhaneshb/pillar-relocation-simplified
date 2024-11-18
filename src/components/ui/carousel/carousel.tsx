@@ -1,15 +1,20 @@
 "use client"
 
 import * as React from "react"
-import useEmblaCarousel from "embla-carousel-react"
+import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
 import { cn } from "@/lib/utils"
 import { CarouselContext } from "./carousel-context"
 
-export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
-  opts?: any
-  plugins?: any
+type CarouselApi = UseEmblaCarouselType[1]
+type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
+type CarouselOptions = UseCarouselParameters[0]
+type CarouselPlugin = UseCarouselParameters[1]
+
+interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
+  opts?: CarouselOptions
+  plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
-  setApi?: (api: any) => void
+  setApi?: (api: CarouselApi) => void
 }
 
 const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
@@ -35,7 +40,7 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 
-    const onSelect = React.useCallback((api: any) => {
+    const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) return
 
       setCanScrollPrev(api.canScrollPrev())
@@ -94,4 +99,4 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 )
 Carousel.displayName = "Carousel"
 
-export { Carousel }
+export { type CarouselApi, Carousel }

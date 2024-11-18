@@ -1,7 +1,5 @@
-import { Carousel } from "./carousel"
-import { useCarousel } from "./use-carousel"
-import { CarouselContent } from "./carousel-content"
-import { CarouselItem } from "./carousel-item"
-
-export { Carousel, CarouselContent, CarouselItem, useCarousel }
-export type { CarouselApi } from "./carousel"
+export { Carousel, type CarouselApi } from "./carousel"
+export { CarouselContent } from "./carousel-content"
+export { CarouselItem } from "./carousel-item"
+export { CarouselNext } from "./carousel-next"
+export { CarouselPrevious } from "./carousel-previous"
