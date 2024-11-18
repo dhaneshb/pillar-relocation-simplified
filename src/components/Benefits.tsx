@@ -3,7 +3,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const benefits = [
   "Streamlined documentation process",
@@ -32,6 +35,8 @@ const carouselImages = [
 ];
 
 const Benefits = () => {
+  const plugin = React.useMemo(() => Autoplay({ delay: 3000 }), []);
+
   return (
     <section id="benefits" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +59,14 @@ const Benefits = () => {
             </div>
           </div>
           <div className="relative animate-fade-in">
-            <Carousel className="w-full max-w-xl mx-auto">
+            <Carousel 
+              className="w-full max-w-xl mx-auto"
+              plugins={[plugin]}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
               <CarouselContent>
                 {carouselImages.map((image, index) => (
                   <CarouselItem key={index}>
@@ -68,6 +80,8 @@ const Benefits = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
             </Carousel>
           </div>
         </div>
