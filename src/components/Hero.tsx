@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { useCarousel } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, useCarousel } from "@/components/ui/carousel";
 
 const Hero = () => {
   const images = [
@@ -9,17 +8,17 @@ const Hero = () => {
     "/placeholder.svg"
   ];
 
-  const carousel = useCarousel();
-
+  const [api, setApi] = React.useState<CarouselApi>();
+  
   useEffect(() => {
+    if (!api) return;
+    
     const interval = setInterval(() => {
-      if (carousel.api) {
-        carousel.api.scrollNext();
-      }
+      api.scrollNext();
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [carousel.api]);
+  }, [api]);
 
   return (
     <div className="pt-24 pb-16 bg-gradient-to-b from-background to-white">
@@ -44,7 +43,7 @@ const Hero = () => {
         <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <div className="w-full max-w-4xl">
             <Carousel 
-              {...carousel}
+              setApi={setApi}
               opts={{
                 align: "start",
                 loop: true,
