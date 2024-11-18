@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const Hero = () => {
   const images = [
@@ -8,7 +8,7 @@ const Hero = () => {
     "/placeholder.svg"
   ];
 
-  const [api, setApi] = useState<CarouselApi>();
+  const [api, setApi] = React.useState<CarouselApi>();
   
   useEffect(() => {
     if (!api) return;
