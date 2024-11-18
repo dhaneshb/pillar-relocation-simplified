@@ -1,4 +1,26 @@
+import { useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useCarousel } from "@/components/ui/carousel";
+
 const Hero = () => {
+  const images = [
+    "/Employeer.png",
+    "/Employee.png",
+    "/placeholder.svg"
+  ];
+
+  const carousel = useCarousel();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carousel.api) {
+        carousel.api.scrollNext();
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [carousel.api]);
+
   return (
     <div className="pt-24 pb-16 bg-gradient-to-b from-background to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,11 +42,30 @@ const Hero = () => {
           </div>
         </div>
         <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
-          <img 
-            src="/Employeer.png" 
-            alt="Relocation Process" 
-            className="rounded-lg shadow-2xl max-w-full h-auto"
-          />
+          <div className="w-full max-w-4xl">
+            <Carousel 
+              {...carousel}
+              opts={{
+                align: "start",
+                loop: true,
+                duration: 1000,
+                watchDrag: false
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <img 
+                      src={image} 
+                      alt={`Relocation Process ${index + 1}`} 
+                      className="rounded-lg shadow-2xl w-full h-auto"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
         </div>
       </div>
     </div>
