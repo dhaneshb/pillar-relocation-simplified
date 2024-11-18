@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <div className="w-full max-w-[90%] lg:max-w-[80%]">
             <img 
-              src="/EmployerRelocaitonFlow.png" 
+              src="/EmployerFlow1.png" 
               alt="Employee Relocation Process Flow" 
               className="rounded-lg shadow-2xl w-full h-auto transform hover:scale-105 transition-transform duration-300"
             />
