@@ -14,10 +14,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <button className="bg-[#0078D4] text-white px-8 py-3 rounded-full hover:bg-[#0078D4]/80 transition-colors">
-              Get Started
-            </button>
-            <button className="border-2 border-[#0078D4] text-[#0078D4] px-8 py-3 rounded-full hover:bg-[#0078D4] hover:text-white transition-colors">
-              Book a Demo
+              Join the Waitlist
             </button>
           </div>
         </div>
