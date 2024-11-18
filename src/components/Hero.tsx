@@ -13,10 +13,10 @@ const Hero = () => {
             we make international moves seamless and stress-free.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-secondary transition-colors">
+            <button className="bg-[#0EA5E9] text-white px-8 py-3 rounded-full hover:bg-[#33C3F0] transition-colors">
               Get Started
             </button>
-            <button className="border-2 border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-white transition-colors">
+            <button className="border-2 border-[#0EA5E9] text-[#0EA5E9] px-8 py-3 rounded-full hover:bg-[#0EA5E9] hover:text-white transition-colors">
               Book a Demo
             </button>
           </div>
