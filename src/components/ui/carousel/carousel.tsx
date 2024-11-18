@@ -1,7 +1,7 @@
 import * as React from "react"
-import useEmblaCarousel from "embla-carousel-react"
-import { type UseEmblaCarouselType } from "embla-carousel-react"
-import { useCarousel } from "./use-carousel"
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from "embla-carousel-react"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type CarouselOptions = Parameters<typeof useEmblaCarousel>[0]
@@ -26,10 +26,6 @@ const Carousel = React.forwardRef<
     plugins
   )
 
-  const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } = useCarousel({
-    api,
-  })
-
   React.useEffect(() => {
     if (api && setApi) {
       setApi(api)
@@ -44,7 +40,7 @@ const Carousel = React.forwardRef<
       aria-roledescription="carousel"
       {...props}
     >
-      <div ref={carouselRef} className="overflow-hidden">
+      <div ref={carouselRef as React.RefObject<HTMLDivElement>} className="overflow-hidden">
         {children}
       </div>
     </div>
@@ -52,4 +48,5 @@ const Carousel = React.forwardRef<
 })
 Carousel.displayName = "Carousel"
 
-export { Carousel, type CarouselApi }
+export { Carousel }
+export type { CarouselApi }

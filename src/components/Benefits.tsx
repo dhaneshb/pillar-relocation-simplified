@@ -1,4 +1,9 @@
 import { CheckCircle } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const benefits = [
   "Streamlined documentation process",
@@ -9,6 +14,21 @@ const benefits = [
   "Real-time progress tracking",
   "24/7 support availability",
   "Customizable workflow options"
+];
+
+const carouselImages = [
+  {
+    src: "/Relocaiton Tasks.png",
+    alt: "Relocation Tasks"
+  },
+  {
+    src: "/Permenant housing.png",
+    alt: "Permanent Housing"
+  },
+  {
+    src: "/Expat Agent.png",
+    alt: "Expat Agent"
+  }
 ];
 
 const Benefits = () => {
@@ -34,12 +54,21 @@ const Benefits = () => {
             </div>
           </div>
           <div className="relative animate-fade-in">
-            <div className="absolute inset-0 bg-primary/5 rounded-3xl transform rotate-3"></div>
-            <img 
-              src="/temporary-housing.png" 
-              alt="Temporary Housing" 
-              className="relative rounded-3xl shadow-lg transform hover:scale-105 transition-transform duration-300"
-            />
+            <Carousel className="w-full max-w-xl mx-auto">
+              <CarouselContent>
+                {carouselImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative p-1">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>
