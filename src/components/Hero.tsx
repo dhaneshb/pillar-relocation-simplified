@@ -21,18 +21,11 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="mt-16 grid md:grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-          <div className="w-full">
+        <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <div className="w-full max-w-4xl">
             <img 
               src="/Employeer.png" 
               alt="Employee Relocation Platform" 
-              className="rounded-lg shadow-2xl w-full h-auto"
-            />
-          </div>
-          <div className="w-full">
-            <img 
-              src="/Employee.png" 
-              alt="Employee Relocation Services" 
               className="rounded-lg shadow-2xl w-full h-auto"
             />
           </div>
