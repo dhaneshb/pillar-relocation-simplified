@@ -1,30 +1,8 @@
 "use client"
 
 import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 const Features = () => {
-  const images = [
-    {
-      src: "/Relocaiton Tasks.png",
-      alt: "Relocation Tasks"
-    },
-    {
-      src: "/Permenant housing.png",
-      alt: "Permanent Housing"
-    },
-    {
-      src: "/Expat Agent.png",
-      alt: "Expat Agent"
-    }
-  ];
-
   return (
     <section className="py-16 bg-white" id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,26 +100,6 @@ const Features = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="relative">
-            <Carousel className="w-full max-w-xl mx-auto">
-              <CarouselContent>
-                {images.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="p-1">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="rounded-lg shadow-xl w-full h-auto object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
           </div>
         </div>
       </div>
