@@ -75,7 +75,7 @@ const Benefits = () => {
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="rounded-xl shadow-lg w-full h-auto object-cover"
+                        className="rounded-xl shadow-lg w-full h-[400px] object-cover object-center transform scale-110 hover:scale-125 transition-transform duration-300"
                       />
                     </div>
                   </CarouselItem>
