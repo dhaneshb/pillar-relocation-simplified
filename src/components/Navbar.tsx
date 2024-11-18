@@ -16,9 +16,6 @@ const Navbar = () => {
             <a href="#features" className="text-gray-700 hover:text-primary transition-colors">Features</a>
             <a href="#how-it-works" className="text-gray-700 hover:text-primary transition-colors">How it Works</a>
             <a href="#benefits" className="text-gray-700 hover:text-primary transition-colors">Benefits</a>
-            <button className="bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">
-              Get Started
-            </button>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -35,9 +32,6 @@ const Navbar = () => {
             <a href="#features" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">Features</a>
             <a href="#how-it-works" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">How it Works</a>
             <a href="#benefits" className="block px-3 py-2 text-gray-700 hover:text-primary transition-colors">Benefits</a>
-            <button className="w-full mt-2 bg-primary text-white px-6 py-2 rounded-full hover:bg-secondary transition-colors">
-              Get Started
-            </button>
           </div>
         </div>
       )}
