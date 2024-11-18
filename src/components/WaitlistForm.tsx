@@ -68,10 +68,10 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
       }
 
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_o0davav',
+        'template_hakicbe',
         templateParams,
-        'YOUR_PUBLIC_KEY'
+        'sTFha8xCQcZy5Kt_E'
       )
 
       toast.success("Successfully joined the waitlist!")
