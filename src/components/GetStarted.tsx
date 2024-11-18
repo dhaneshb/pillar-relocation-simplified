@@ -1,21 +1,30 @@
+import React, { useState } from "react"
+import { WaitlistForm } from "./WaitlistForm"
+
 const GetStarted = () => {
+  const [showWaitlistForm, setShowWaitlistForm] = useState(false)
+
   return (
-    <section className="py-20 bg-[#0078D4]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-fade-in">
-          Ready to Transform Your Relocation Process?
-        </h2>
-        <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Join leading companies who trust PILLAR for their employee relocation needs.
-        </p>
-        <div className="flex justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <button className="bg-white text-[#0078D4] px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
+    <section className="bg-background py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-textPrimary mb-6">
+            Ready to Transform Your Employee Relocation Process?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Join the waitlist today and be among the first to experience the future of seamless employee relocation with PILLAR.
+          </p>
+          <button
+            onClick={() => setShowWaitlistForm(true)}
+            className="bg-[#0078D4] text-white px-8 py-3 rounded-full hover:bg-[#0078D4]/80 transition-colors"
+          >
             Join the Waitlist
           </button>
         </div>
       </div>
+      <WaitlistForm open={showWaitlistForm} onOpenChange={setShowWaitlistForm} />
     </section>
-  );
-};
+  )
+}
 
-export default GetStarted;
+export default GetStarted
