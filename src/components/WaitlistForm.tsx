@@ -23,6 +23,13 @@ import emailjs from '@emailjs/browser'
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(2, "Last name must be at least 2 characters"),
+  email: z.string().email("Invalid email address").refine((email) => {
+    // Split email at @ and check if domain part exists
+    const [, domain] = email.split('@');
+    // Reject common personal email domains
+    const personalDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com'];
+    return domain && !personalDomains.includes(domain.toLowerCase());
+  }, "Please use your company email address"),
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
   phoneNumber: z.string().min(10, "Please enter a valid phone number"),
 })
@@ -38,6 +45,7 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
     defaultValues: {
       firstName: "",
       lastName: "",
+      email: "",
       companyName: "",
       phoneNumber: "",
     },
@@ -48,20 +56,22 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
       const templateParams = {
         to_email: 'dhaneshbiradavada@gmail.com',
         from_name: `${values.firstName} ${values.lastName}`,
+        from_email: values.email,
         company_name: values.companyName,
         phone_number: values.phoneNumber,
         message: `New Waitlist Submission:
           First Name: ${values.firstName}
           Last Name: ${values.lastName}
+          Email: ${values.email}
           Company: ${values.companyName}
           Phone: ${values.phoneNumber}`
       }
 
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
         templateParams,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'YOUR_PUBLIC_KEY'
       )
 
       toast.success("Successfully joined the waitlist!")
@@ -102,6 +112,19 @@ export function WaitlistForm({ open, onOpenChange }: WaitlistFormProps) {
                   <FormLabel>Last Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Doe" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Company Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="john.doe@company.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
