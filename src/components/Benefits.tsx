@@ -22,16 +22,16 @@ const benefits = [
 
 const carouselImages = [
   {
-    src: "/Relocaiton Tasks.png",
-    alt: "Relocation Tasks"
+    src: "/EmployeeFlow1.png",
+    alt: "Employee Flow 1"
   },
   {
-    src: "/Permenant housing.png",
-    alt: "Permanent Housing"
+    src: "/EmployeeFlow2.png",
+    alt: "Employee Flow 2"
   },
   {
-    src: "/Expat Agent.png",
-    alt: "Expat Agent"
+    src: "/EmployeeFlow3.png",
+    alt: "Employee Flow 3"
   }
 ];
 
