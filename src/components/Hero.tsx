@@ -1,8 +1,26 @@
 import React, { useState } from "react"
 import { WaitlistForm } from "./WaitlistForm"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 const Hero = () => {
   const [showWaitlistForm, setShowWaitlistForm] = useState(false)
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  )
+
+  const images = [
+    "/EmployerFlow1.png",
+    "/EmployerFlow2.png",
+    "/EmployerFlow3.png",
+    "/EmployerFlow4.png",
+    "/EmployerFlow5.png",
+    "/EmployerFlow6.png"
+  ]
 
   return (
     <div className="pt-24 pb-16 bg-gradient-to-b from-background to-white">
@@ -26,11 +44,26 @@ const Hero = () => {
         </div>
         <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <div className="w-full max-w-[90%] lg:max-w-[80%]">
-            <img 
-              src="/EmployerFlow1.png" 
-              alt="Employee Relocation Process Flow" 
-              className="rounded-lg shadow-2xl w-full h-auto transform hover:scale-105 transition-transform duration-300"
-            />
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[plugin.current]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <img 
+                      src={image}
+                      alt={`Employee Relocation Process Flow ${index + 1}`}
+                      className="rounded-lg shadow-2xl w-full h-auto transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </div>
