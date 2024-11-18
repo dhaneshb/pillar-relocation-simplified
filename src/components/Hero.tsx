@@ -4,7 +4,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-textPrimary mb-6 animate-fade-in">
-            Your Comprehensive <span className="text-primary">Relocation</span> Companion
+            Introducing PILLAR – The Future of Seamless Employee Relocation
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Simplify employee relocation with our all-in-one platform. From paperwork to housing, 
