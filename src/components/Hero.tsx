@@ -21,8 +21,8 @@ const Hero = () => {
         </div>
         <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <img 
-            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&q=80" 
-            alt="Platform Preview" 
+            src="/relocation-process.png" 
+            alt="Relocation Process" 
             className="rounded-lg shadow-2xl max-w-full"
           />
         </div>

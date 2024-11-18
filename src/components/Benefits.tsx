@@ -36,8 +36,8 @@ const Benefits = () => {
           <div className="relative animate-fade-in">
             <div className="absolute inset-0 bg-primary/5 rounded-3xl transform rotate-3"></div>
             <img 
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80" 
-              alt="Team collaboration" 
+              src="/temporary-housing.png" 
+              alt="Temporary Housing" 
               className="relative rounded-3xl shadow-lg"
             />
           </div>
